@@ -23,7 +23,7 @@
       <td><%= app['active'] %></td>
       <td><%= app['status'] %></td>
       <td><%= app['auto_connect'] %></td>
-      <td><%= app['notification']['type'] %></td>
+      <td><%= (app['notification'] || {})['type'] %></td>
       <td><a href="<%= url(app['_uri']) %>">Show</a> | <form action="<%= url(app['_uri']) %>" method="post"><input type="hidden" name="_method" value="DELETE" /><input type="submit" value="Remove" /></form></td>
     </tr>
   <% end %>
