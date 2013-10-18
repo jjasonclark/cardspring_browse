@@ -22,14 +22,14 @@ module CardspringBrowse
         }
       end
 
-      post "/v1/transactions/create" do
+      put "/v1/transactions/:transaction_id" do
         result = api.put("/v1/transactions/#{params[:transaction_id]}", :type => params[:transaction_type] , :amount => params[:amount])
         body = result.body
         body_hash = JSON.parse(body)
         if body_hash['status'].match(/^4/)
           p "errors", body
         else
-          redirect to("/v1/events")
+          redirect to("/v1/transactions/#{params[:transaction_id]}")
         end
       end
 
