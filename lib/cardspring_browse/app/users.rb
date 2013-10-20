@@ -4,10 +4,6 @@ module CardspringBrowse
   module App
     class Users < Controller
       helpers do
-        def h(text)
-          Rack::Utils.escape_html(text)
-        end
-
         def users_path
           url("/v1/users")
         end

@@ -4,10 +4,6 @@ module CardspringBrowse
   module App
     class Businesses < Controller
       helpers do
-        def h(text)
-          Rack::Utils.escape_html(text)
-        end
-
         def businesses_path
           url("/v1/businesses")
         end
