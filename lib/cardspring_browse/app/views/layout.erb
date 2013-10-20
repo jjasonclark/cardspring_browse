@@ -3,9 +3,20 @@
 <head>
   <title>Cardspring Browser</title>
   <link href="<%= url("/css/application.css") %>" rel="stylesheet" type="text/css" />
+  <link href='http://fonts.googleapis.com/css?family=Belleza' rel='stylesheet' type='text/css'>
   <script src="<%= url("/javascript/jquery-2.0.3.js") %>" type="text/javascript"></script>
 </head>
 <body>
+<div class="header">
+<h1 class="title">Cardspring Browser</h1>
+
+<ul class="menu">
+  <li><a href="<%= url("/v1/users") %>">Users</a></li>
+  <li><a href="<%= url("/v1/events") %>">Events</a></li>
+  <li><a href="<%= url("/v1/businesses") %>">Businesses</a></li>
+</ul>
+</div>
+
 <%= yield %>
 </body>
 </html>
