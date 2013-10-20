@@ -28,9 +28,8 @@ module CardspringBrowse
         body_hash = JSON.parse(body)
         if body_hash['status'].start_with?("4")
           p "errors", body
-        else
-          redirect to("/v1/transactions/#{params[:transaction_id]}")
         end
+        redirect to("/v1/transactions/#{params[:transaction_id]}")
       end
 
       post "/v1/transactions" do
