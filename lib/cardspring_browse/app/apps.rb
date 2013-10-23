@@ -3,12 +3,6 @@ require 'json'
 module CardspringBrowse
   module App
     class Apps < Controller
-      helpers do
-        def h(text)
-          Rack::Utils.escape_html(text)
-        end
-      end
-
       get "/v1/apps" do
         result = api.get(request_path)
         body = result.body

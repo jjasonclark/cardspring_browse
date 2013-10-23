@@ -7,6 +7,12 @@ module CardspringBrowse
 
       PROPERTY_NAME = 'cardspring_browse.config_file'
 
+      helpers do
+        def h(text)
+          Rack::Utils.escape_html(text)
+        end
+      end
+
       protected
 
       def request_path

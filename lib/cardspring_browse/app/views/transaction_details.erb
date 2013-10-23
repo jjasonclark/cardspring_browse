@@ -7,7 +7,8 @@
 </table>
 
 <p>
-<form action="<%= url("/v1/transactions/create") %>" method="POST">
+<form action="<%= url("/v1/transactions/#{transaction_details["id"]}") %>" method="POST">
+  <input type="hidden" name="_method" value="put" />
     <strong>Create A Transaction:</strong>
     <div>
       <div>
